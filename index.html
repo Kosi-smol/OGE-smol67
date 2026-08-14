@@ -8,7 +8,7 @@
 
 <!-- ==================== PWA / ИКОНКА ==================== -->
 <!-- Иконка сделана прямо в SVG-коде (стилизованное перо + буква "Ю") -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23F7F2EE'/%3E%3Cpath d='M30 25 L30 55 Q30 68 43 68 Q56 68 56 55 L56 25' stroke='%23C48973' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cline x1='56' y1='25' x2='56' y2='75' stroke='%23C48973' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M66 30 Q80 40 70 55 Q64 63 72 75' stroke='%23C48973' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237D913C'/%3E%3Cpath d='M30 25 L30 55 Q30 68 43 68 Q56 68 56 55 L56 25' stroke='%23EBA050' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cline x1='56' y1='25' x2='56' y2='75' stroke='%23EBA050' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M66 30 Q80 40 70 55 Q64 63 72 75' stroke='%23EBA050' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <!-- Иконка для добавления на главный экран iOS -->
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Курсы ОГЭ">
-<meta name="theme-color" content="#F7F2EE">
+<meta name="theme-color" content="#C3D19B">
 
 <!-- Web App Manifest -->
 <link rel="manifest" href="manifest.json">
@@ -34,14 +34,17 @@
    Чтобы сменить палитру — меняйте значения ниже
    ========================================================================== */
 :root{
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #F7F2EE;      /* светло-бежевый */
-  --color-bg-grey: #F3F3F1;     /* светло-серый */
-  --color-text: #2E2A27;
-  --color-text-light: #6F6864;
-  --color-accent: #C48973;      /* терракотовый / пыльно-розовый */
-  --color-accent-dark: #A96C57;
-  --color-border: #E7E0D9;
+  --color-bg: #EBE1CD;          /* песочный, молочный (rgb 235,225,205) */
+  --color-bg-alt: #C3D19B;      /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-bg-grey: #C3D19B;     /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-text: #5A6937;        /* тёмный хаки, основной текст (rgb 90,105,55) */
+  --color-text-light: #8B5E3E;  /* тёплый коричневый, второстепенный текст, контрастный (rgb 139,94,62) */
+  --color-accent: #EBA050;      /* апельсиново-золотой, акцент (rgb 235,160,80) */
+  --color-accent-dark: #725817; /* глубокий золотисто-коричневый, ховер/текст (rgb 114,88,23) */
+  --color-border: #D2C8B9;      /* мягкий серо-бежевый, границы (rgb 210,200,185) */
+  --color-btn: #AFD2E6;         /* нежно-голубой, кнопки в покое */
+  --color-btn-hover: #3E86AC;   /* голубой, кнопки при наведении/нажатии */
+  --color-btn-text: #1F4E68;    /* тёмно-синий, читаемый текст на голубых кнопках */
   --radius: 18px;
   --max-width: 1180px;
   --transition: 0.35s ease;
@@ -105,24 +108,24 @@ img{ max-width:100%; display:block; }
   align-items:center;
   gap:8px;
   padding:16px 36px;
-  background:var(--color-accent);
-  color:#fff;
+  background:var(--color-btn);
+  color:var(--color-btn-text);
   border:none;
   border-radius:50px;
   font-family:'Montserrat', sans-serif;
   font-weight:500;
   font-size:15px;
   cursor:pointer;
-  transition:background var(--transition), transform var(--transition);
+  transition:background var(--transition), color var(--transition), transform var(--transition);
 }
-.btn:hover{ background:var(--color-accent-dark); transform:translateY(-2px); }
+.btn:hover, .btn:active{ background:var(--color-btn-hover); color:#fff; transform:translateY(-2px); }
 
 .btn-outline{
   background:transparent;
-  border:1.5px solid var(--color-accent);
-  color:var(--color-accent);
+  border:1.5px solid var(--color-btn-text);
+  color:var(--color-btn-text);
 }
-.btn-outline:hover{ background:var(--color-accent); color:#fff; }
+.btn-outline:hover, .btn-outline:active{ background:var(--color-btn-text); color:#fff; }
 
 /* ==========================================================================
    АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
@@ -220,8 +223,8 @@ header{
   align-items:center;
   padding-top:110px;
   background:
-    radial-gradient(circle at 85% 20%, rgba(196,137,115,0.10), transparent 45%),
-    radial-gradient(circle at 10% 80%, rgba(196,137,115,0.08), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(235,160,80,0.10), transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(235,160,80,0.08), transparent 40%),
     var(--color-bg);
 }
 
@@ -305,7 +308,7 @@ header{
   justify-content:center;
   border:1px solid var(--color-border);
   overflow:hidden;
-  box-shadow:0 30px 60px -24px rgba(46,42,39,0.28), 0 14px 30px -14px rgba(196,137,115,0.35);
+  box-shadow:0 30px 60px -24px rgba(90,105,55,0.28), 0 14px 30px -14px rgba(235,160,80,0.35);
 }
 .about-photo-frame::after{
   content:'';
@@ -337,7 +340,7 @@ header{
   justify-content:center;
   font-size:26px;
   border:4px solid #fff;
-  box-shadow:0 14px 28px rgba(196,137,115,0.45);
+  box-shadow:0 14px 28px rgba(235,160,80,0.45);
   z-index:2;
 }
 .about-text p{
@@ -426,8 +429,14 @@ header{
   font-size:16px !important;
   color:var(--color-text) !important;
 }
-.about-edu-btn{
+.about-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
   margin-top:26px;
+}
+.about-edu-btn{
+  margin-top:0;
 }
 
 /* ==========================================================================
@@ -444,12 +453,12 @@ header{
   border-radius:var(--radius);
   padding:clamp(26px, 5vw, 40px) clamp(20px, 4vw, 34px);
   border:1px solid var(--color-border);
-  box-shadow:0 20px 45px -28px rgba(46,42,39,0.25);
+  box-shadow:0 20px 45px -28px rgba(90,105,55,0.25);
   transition:transform var(--transition), box-shadow var(--transition);
 }
 .service-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 26px 55px -22px rgba(46,42,39,0.22);
+  box-shadow:0 26px 55px -22px rgba(90,105,55,0.22);
 }
 
 .service-card-icon{
@@ -528,7 +537,7 @@ header{
   text-transform:uppercase;
   padding:4px 10px 4px 8px;
   border-radius:50px;
-  box-shadow:0 6px 14px rgba(196,137,115,0.35);
+  box-shadow:0 6px 14px rgba(235,160,80,0.35);
   white-space:nowrap;
 }
 .badge-profit svg{ width:11px; height:11px; }
@@ -567,7 +576,7 @@ header{
 .portfolio-img-wrap{
   width:100%;
   aspect-ratio:1/1;
-  background:linear-gradient(135deg, #EFE7E0, #F7F2EE);
+  background:linear-gradient(135deg, #B7C68C, #A7B87C);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -755,7 +764,7 @@ header{
    ПОДВАЛ / FOOTER
    ========================================================================== */
 footer{
-  background:#2E2A27;
+  background:#5A6937;
   color:#EFEAE5;
   padding:56px 0 30px;
 }
@@ -816,7 +825,7 @@ footer{
   transition:all var(--transition);
   z-index:900;
   border:none;
-  box-shadow:0 10px 24px rgba(196,137,115,0.35);
+  box-shadow:0 10px 24px rgba(235,160,80,0.35);
 }
 .scroll-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
 
@@ -931,6 +940,7 @@ footer{
         <li><a href="#home" class="nav-link">Главная</a></li>
         <li><a href="#services" class="nav-link">Курсы</a></li>
         <!-- <li><a href="#portfolio" class="nav-link">Портфолио</a></li> -->
+        <li><a href="programmy.html" class="nav-link">Программы</a></li>
         <li><a href="#contacts" class="nav-link">Контакты</a></li>
       </ul>
     </nav>
@@ -957,8 +967,8 @@ footer{
 
     <div class="hero-visual fade-in visible">
       <!-- Чтобы вставить своё фото — положите файл photo-hero.jpg рядом с этим html -->
-      <img src="ОGE.jpg" alt="Юлия — преподаватель математики" style="width:100%;height:100%;object-fit:cover;display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.4">
+      <img src="OGE.png " alt="Юлия — преподаватель математики" style="width:100%;height:100%;object-fit:cover;display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
+      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.4">
         <rect x="3" y="3" width="18" height="18" rx="2"/>
         <circle cx="9" cy="9" r="2"/>
         <path d="M21 15l-5-5L5 21"/>
@@ -975,7 +985,7 @@ footer{
       <div class="about-photo-frame">
         <!-- Чтобы вставить своё фото — положите файл People.jpg рядом с этим html -->
         <img src="People.jpg" alt="Юлия, фото" style="width:100%;height:100%;object-fit:cover;display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.2" style="width:60px;height:60px;opacity:.3;">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.2" style="width:60px;height:60px;opacity:.3;">
           <circle cx="12" cy="8" r="4"/>
           <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
         </svg>
@@ -1045,10 +1055,16 @@ footer{
 
       <p class="about-closing"><strong>Моя цель</strong> — не просто объяснить темы, а помочь каждому ученику уверенно подготовиться к ОГЭ и получить тот результат, к которому он стремится.</p>
 
-      <a href="obrazovanie.html" class="btn btn-outline about-edu-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
-        Моё образование
-      </a>
+      <div class="about-buttons">
+        <a href="obrazovanie.html" class="btn btn-outline about-edu-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          Моё образование
+        </a>
+        <a href="programmy.html" class="btn btn-outline about-edu-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9.5 15.5h5M9.5 12h5"/></svg>
+          Программы обучения
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1118,7 +1134,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-1.jpg" alt="Оформление хайлайтс" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Оформление хайлайтс</h4>
@@ -1131,7 +1147,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-2.jpg" alt="Печатная продукция" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Печатная продукция</h4>
@@ -1144,7 +1160,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-3.jpg" alt="Разработка логотипа" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Разработка логотипа</h4>
@@ -1157,7 +1173,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-4.jpg" alt="Линейные иллюстрации" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Линейные иллюстрации</h4>
@@ -1170,7 +1186,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-5.jpg" alt="Инфопродукты" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Инфопродукты</h4>
@@ -1183,7 +1199,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-6.jpg" alt="Иллюстрации для учебных работ" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Иллюстрации для учебных работ</h4>
@@ -1196,7 +1212,7 @@ footer{
         <div class="portfolio-img-wrap">
           
           <img src="work-7.jpg" alt="Карточки для маркетплейсов" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Карточки для маркетплейсов</h4>
@@ -1209,7 +1225,7 @@ footer{
         <div class="portfolio-img-wrap">
           <
           <img src="work-8.jpg" alt="Оформление визуала профиля" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
         <div class="portfolio-caption">
           <h4>Визуал профиля</h4>
@@ -1296,6 +1312,18 @@ footer{
         </div>
         <div>
           <div class="contact-label">Телефон</div>
+          <a href="tel:+79508549317" class="contact-value">+7 950 854 93 17</a>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M15.6307,40.4647c8.0824,7.1933,27.8593-1.1656,27.782-15.8504-.053-10.067-8.3059-20.0247-18.5404-20.1135-9.5372-.0827-19.6469,5.9619-20.2285,17.7674-.1732,3.5151,0,8.8586,1.2303,11.7305,2.3345,6.6998.1133,8.4765,2.8039,9.3271,2.4112.6009,4.7288-.3528,6.9526-2.8611Z"/>
+</svg>
+        </div>
+        <div>
+          <div class="contact-label">Max</div>
           <a href="tel:+79508549317" class="contact-value">+7 950 854 93 17</a>
         </div>
       </div>
@@ -1404,9 +1432,16 @@ overlay.addEventListener('click', closeMenu);
 // Закрываем меню при клике на пункт (для мобильных) + плавная прокрутка
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    // Плавный скролл — только для якорных ссылок вида "#id".
+    // Ссылки на другие страницы (например, programmy.html) открываются обычным образом.
+    if(!href || href.charAt(0) !== '#'){
+      closeMenu();
+      return;
+    }
     e.preventDefault();
     closeMenu();
-    const target = document.querySelector(link.getAttribute('href'));
+    const target = document.querySelector(href);
     if(target){
       const headerOffset = 76;
       const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
