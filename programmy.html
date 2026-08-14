@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Программы обучения — Юлия Константиновна</title>
+<meta name="description" content="Программы курсов подготовки к ОГЭ по математике: подробное содержание в формате PDF.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237D913C'/%3E%3Cpath d='M30 25 L30 55 Q30 68 43 68 Q56 68 56 55 L56 25' stroke='%23EBA050' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cline x1='56' y1='25' x2='56' y2='75' stroke='%23EBA050' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M66 30 Q80 40 70 55 Q64 63 72 75' stroke='%23EBA050' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<!-- Иконка для добавления на главный экран iOS -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Мета-теги PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Курсы ОГЭ">
+<meta name="theme-color" content="#C3D19B">
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --color-bg: #EBE1CD;          /* песочный, молочный (rgb 235,225,205) */
+  --color-bg-alt: #C3D19B;      /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-bg-grey: #C3D19B;     /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-text: #5A6937;        /* тёмный хаки, основной текст (rgb 90,105,55) */
+  --color-text-light: #8B5E3E;  /* тёплый коричневый, второстепенный текст, контрастный (rgb 139,94,62) */
+  --color-accent: #EBA050;      /* апельсиново-золотой, акцент (rgb 235,160,80) */
+  --color-accent-dark: #725817; /* глубокий золотисто-коричневый, ховер/текст (rgb 114,88,23) */
+  --color-border: #D2C8B9;      /* мягкий серо-бежевый, границы (rgb 210,200,185) */
+  --color-btn: #AFD2E6;         /* нежно-голубой, кнопки в покое */
+  --color-btn-hover: #3E86AC;   /* голубой, кнопки при наведении/нажатии */
+  --color-btn-text: #1F4E68;    /* тёмно-синий, читаемый текст на голубых кнопках */
+  --radius: 18px;
+  --max-width: 1180px;
+  --transition: 0.35s ease;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; overflow-x:hidden; width:100%; }
+
+body{
+  font-family:'Roboto', sans-serif;
+  color:var(--color-text);
+  background:var(--color-bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-top: env(safe-area-inset-top);
+  overflow-x:hidden;
+  width:100%;
+}
+
+h1,h2,h3,h4{ font-family:'Montserrat', sans-serif; font-weight:600; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 clamp(16px, 4.5vw, 24px);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 30px;
+  background:var(--color-btn);
+  color:var(--color-btn-text);
+  border:none;
+  border-radius:50px;
+  font-family:'Montserrat', sans-serif;
+  font-weight:500;
+  font-size:14.5px;
+  cursor:pointer;
+  transition:background var(--transition), color var(--transition), transform var(--transition);
+  white-space:nowrap;
+}
+.btn:hover, .btn:active{ background:var(--color-btn-hover); color:#fff; transform:translateY(-2px); }
+
+/* ---------- Шапка ---------- */
+header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--color-border);
+  padding-top: env(safe-area-inset-top);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 24px;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+.logo{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--color-text);
+}
+.logo span{ color:var(--color-accent); }
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Montserrat', sans-serif;
+  font-size:14px;
+  font-weight:500;
+  color:var(--color-text);
+  transition:color var(--transition);
+}
+.back-link:hover{ color:var(--color-accent); }
+.back-link svg{ width:16px; height:16px; }
+
+/* ---------- Хиро блока страницы ---------- */
+.page-hero{
+  padding:clamp(120px, 22vw, 160px) 0 clamp(36px, 6vw, 60px);
+  background:
+    radial-gradient(circle at 85% 10%, rgba(235,160,80,0.10), transparent 45%),
+    var(--color-bg-alt);
+}
+.section-label{
+  display:inline-block;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--color-accent);
+  font-weight:600;
+  margin-bottom:14px;
+}
+.page-title{
+  font-size:clamp(30px, 4.5vw, 46px);
+  margin-bottom:14px;
+}
+.page-sub{
+  color:var(--color-text-light);
+  max-width:620px;
+  font-size:16px;
+}
+
+/* ---------- Список программ ---------- */
+.programs-section{ padding:80px 0 120px; }
+
+.programs-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap:clamp(20px, 4vw, 30px);
+}
+
+.program-card{
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border-radius:var(--radius);
+  padding:clamp(26px, 5vw, 34px);
+  border:1px solid var(--color-border);
+  box-shadow:0 20px 45px -28px rgba(90,105,55,0.25);
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.program-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 55px -22px rgba(90,105,55,0.22);
+}
+
+.program-icon{
+  width:56px; height:56px;
+  flex-shrink:0;
+  border-radius:14px;
+  background:var(--color-bg-alt);
+  border:1px solid var(--color-border);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px;
+}
+.program-icon svg{ width:26px; height:26px; stroke:var(--color-accent-dark); }
+
+.program-card h3{
+  font-size:19.5px;
+  margin-bottom:10px;
+  color:var(--color-text);
+}
+.program-card p{
+  font-size:14.5px;
+  color:var(--color-text-light);
+  margin-bottom:24px;
+  flex-grow:1;
+}
+
+.program-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12.5px;
+  color:var(--color-text-light);
+  margin-bottom:20px;
+}
+.program-meta svg{ width:14px; height:14px; flex-shrink:0; }
+
+.program-btn{ align-self:flex-start; }
+.program-btn svg{ width:16px; height:16px; }
+
+/* Заглушка, если PDF ещё не добавлен */
+.program-card.is-empty{
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:transparent;
+  border:1.5px dashed var(--color-border);
+  box-shadow:none;
+  min-height:220px;
+}
+.program-card.is-empty:hover{ transform:none; box-shadow:none; }
+.program-card.is-empty .program-icon{ background:transparent; border-style:dashed; }
+.program-card.is-empty p{ margin-bottom:0; flex-grow:0; }
+
+/* ---------- Подвал ---------- */
+footer{
+  background:var(--color-bg-alt);
+  border-top:1px solid var(--color-border);
+  padding:40px 0;
+  text-align:center;
+}
+footer p{ font-size:13.5px; color:var(--color-text-light); }
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 600px){
+  .header-inner{ padding:14px 20px; }
+  .back-link{ font-size:13px; gap:6px; }
+  .programs-section{ padding:56px 0 80px; }
+  .program-card{ padding:24px; }
+}
+
+@media (max-width: 480px){
+  .page-hero{ padding:130px 0 36px; }
+  .page-title{ font-size:28px; }
+  .program-btn{ width:100%; justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Юли<span>я</span></div>
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Вернуться на главную
+    </a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Курсы</div>
+    <h1 class="page-title">Программы обучения</h1>
+    <p class="page-sub">Здесь собраны подробные программы курсов подготовки к ОГЭ — с полным содержанием тем и планом занятий. Каждую программу можно открыть или скачать в формате PDF.</p>
+  </div>
+</section>
+
+<section class="programs-section">
+  <div class="container">
+    <div class="programs-grid">
+
+      <!-- ==================================================================
+           КАРТОЧКА ПРОГРАММЫ
+           Чтобы добавить свою программу:
+           1) положите PDF-файл рядом с этой страницей (например, programma-oge-9-klass.pdf)
+           2) впишите его имя в href у кнопки ниже
+           3) поменяйте заголовок, описание и дату обновления
+           Чтобы добавить ещё одну программу — скопируйте весь блок
+           <div class="program-card">...</div> и вставьте следующим по счёту.
+           ================================================================== -->
+      <div class="program-card">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9.5 15.5h5M9.5 12h5"/></svg>
+        </div>
+        <h3>Программа курса ОГЭ по математике, 9 класс</h3>
+        <p>Полный перечень тем, порядок их изучения и план занятий на весь курс подготовки.</p>
+        <div class="program-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Обновлено: август 2026
+        </div>
+        <a href="Программа_курса_ОГЭ_математика_2027.pdf" target="_blank" rel="noopener" class="btn program-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Открыть PDF
+        </a>
+      </div>
+
+      <!-- Вторая карточка-заглушка — замените на реальную программу, когда она будет готова 
+      <div class="program-card is-empty">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <p>Скоро здесь появится ещё одна программа</p>
+      </div>-->
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Юлия. Все права защищены.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
