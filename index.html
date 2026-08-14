@@ -216,6 +216,50 @@ header{
 /* ==========================================================================
    HERO / ГЛАВНЫЙ ЭКРАН
    ========================================================================== */
+.start-info{
+  margin-top: 94px; /* высота шапки + отступ */
+  
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.start-info-grid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 6vw, 80px);
+  flex-wrap: wrap;
+}
+
+.start-info-item{
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+.start-info-item strong{
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  display: block;
+  font-size: clamp(18px, 2.5vw, 26px);
+  margin-top: 2px;
+}
+.start-info-divider{
+  width: 1px;
+  height: 40px;
+  background: black;
+  flex-shrink: 0;
+}
+.start-info-item .label{
+  font-weight: 400;
+  color: var(--color-text-light);
+  font-size: clamp(12px, 1.2vw, 15px);
+  display: block;
+  margin-bottom: 2px;
+}
+
 .hero{
   min-height:100vh;
   min-height:100svh;
@@ -952,6 +996,20 @@ footer{
 </header>
 
 <div class="overlay" id="overlay"></div>
+
+<div class="start-info">
+  <div class="container start-info-grid">
+    <div class="start-info-item">
+      <span class="label">Старт</span>
+      <strong>7 сентября</strong>
+    </div>
+    <div class="start-info-divider" aria-hidden="true"></div>
+    <div class="start-info-item">
+      <span class="label">Длительность</span>
+      <strong>до дня экзамена</strong>
+    </div>
+  </div>
+</div>
 
 <!-- ==================== ГЛАВНЫЙ ЭКРАН (HERO) ==================== -->
 <section class="hero" id="home">
