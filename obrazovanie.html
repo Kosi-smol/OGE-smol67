@@ -6,7 +6,7 @@
 <title>Образование — Юлия Константиновна</title>
 <meta name="description" content="Образование и квалификация репетитора по математике Юлии Константиновны.">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23F7F2EE'/%3E%3Cpath d='M30 25 L30 55 Q30 68 43 68 Q56 68 56 55 L56 25' stroke='%23C48973' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cline x1='56' y1='25' x2='56' y2='75' stroke='%23C48973' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M66 30 Q80 40 70 55 Q64 63 72 75' stroke='%23C48973' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237D913C'/%3E%3Cpath d='M30 25 L30 55 Q30 68 43 68 Q56 68 56 55 L56 25' stroke='%23EBA050' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cline x1='56' y1='25' x2='56' y2='75' stroke='%23EBA050' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M66 30 Q80 40 70 55 Q64 63 72 75' stroke='%23EBA050' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <!-- Иконка для добавления на главный экран iOS -->
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Курсы ОГЭ">
-<meta name="theme-color" content="#F7F2EE">
+<meta name="theme-color" content="#C3D19B">
 
 <!-- Web App Manifest -->
 <link rel="manifest" href="manifest.json">
@@ -27,14 +27,14 @@
 
 <style>
 :root{
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #F7F2EE;
-  --color-bg-grey: #F3F3F1;
-  --color-text: #2E2A27;
-  --color-text-light: #6F6864;
-  --color-accent: #C48973;
-  --color-accent-dark: #A96C57;
-  --color-border: #E7E0D9;
+  --color-bg: #EBE1CD;          /* песочный, молочный (rgb 235,225,205) */
+  --color-bg-alt: #C3D19B;      /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-bg-grey: #C3D19B;     /* мягкий, приглушённый зелёный, вторичный фон (rgb 195,209,155) */
+  --color-text: #5A6937;        /* тёмный хаки, основной текст (rgb 90,105,55) */
+  --color-text-light: #8B5E3E;  /* тёплый коричневый, второстепенный текст, контрастный (rgb 139,94,62) */
+  --color-accent: #EBA050;      /* апельсиново-золотой, акцент (rgb 235,160,80) */
+  --color-accent-dark: #725817; /* глубокий золотисто-коричневый, ховер/текст (rgb 114,88,23) */
+  --color-border: #D2C8B9;      /* мягкий серо-бежевый, границы (rgb 210,200,185) */
   --radius: 18px;
   --max-width: 1180px;
   --transition: 0.35s ease;
@@ -107,7 +107,7 @@ header{
 .page-hero{
   padding:clamp(120px, 22vw, 160px) 0 clamp(36px, 6vw, 60px);
   background:
-    radial-gradient(circle at 85% 10%, rgba(196,137,115,0.10), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(235,160,80,0.10), transparent 45%),
     var(--color-bg-alt);
 }
 .section-label{
@@ -150,9 +150,9 @@ header{
   display:inline-block;
   font-family:'Montserrat', sans-serif;
   font-size:12.5px;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:0.5px;
-  color:var(--color-accent-dark);
+  color:var(--color-text);
   background:var(--color-bg-alt);
   border:1px solid var(--color-border);
   padding:4px 12px;
@@ -195,7 +195,7 @@ header{
   justify-content:center;
   border:1px solid var(--color-border);
   overflow:hidden;
-  box-shadow:0 30px 60px -24px rgba(46,42,39,0.28), 0 14px 30px -14px rgba(196,137,115,0.35);
+  box-shadow:0 30px 60px -24px rgba(90,105,55,0.28), 0 14px 30px -14px rgba(235,160,80,0.35);
 }
 .edu-photo-frame img{ width:100%; height:100%; object-fit:cover; }
 .edu-photo-frame .placeholder-icon{ width:60px; height:60px; opacity:.3; }
@@ -290,7 +290,7 @@ footer p{ font-size:13.5px; color:var(--color-text-light); }
       <div class="edu-photo-frame">
         <!-- Чтобы вставить своё фото — положите файл рядом с этой страницей и укажите его имя ниже -->
         <img src="People.jpg" alt="Юлия, фото" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#C48973" stroke-width="1.2">
+        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.2">
           <circle cx="12" cy="8" r="4"/>
           <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
         </svg>
