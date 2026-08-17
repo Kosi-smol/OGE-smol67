@@ -970,6 +970,11 @@ footer{
   transition:opacity var(--transition);
 }
 .overlay.show{ opacity:1; visibility:visible; }
+.Text-OGE{
+  font-size: 20px;
+  line-height: 1.5;
+  size: 10px;
+}
 </style>
 </head>
 <body>
@@ -1016,7 +1021,7 @@ footer{
   <div class="container hero-inner">
     <div class="fade-in visible">
       <div class="hero-eyebrow">Репетитор · Подготовка к ОГЭ по математике</div>
-      <h1>Привет! Меня зовут <em>Юлия Константиновна</em></h1>
+      <h1 class="Text-OGE">Онлайн-курс для 9 класса. <em>Подготовка без хаоса: от базовых знании до полноценного решении вариантов ОГЭ.</em></h1>
       <div class="hero-buttons">
         <a href="#contacts" class="btn">Связаться</a>
         <a href="#services" class="btn btn-outline">Курсы</a>
@@ -1052,9 +1057,8 @@ footer{
     </div>
 
     <div class="about-text fade-in">
-      <div class="section-label">Обо мне</div>
-      <h2 class="section-title">Юлия Константиновна</h2>
-      <p class="about-lead">Открыт набор на онлайн-курс подготовки к ОГЭ по математике. Для учеников 9 класса</p>
+      <h2 class="section-title">Открыт набор на онлайн-курс подготовки к ОГЭ по математике. Для учеников 9 класса</h2>
+      <p class="about-lead"></p>
       <p>Если вы хотите, чтобы подготовка к ОГЭ была системной, понятной и без постоянного поиска репетиторов по разным темам — приглашаю на свой авторский курс.</p>
 
       <h3 class="about-subtitle">Что входит в обучение?</h3>
@@ -1120,20 +1124,21 @@ footer{
         </a>
         <a href="programmy.html" class="btn btn-outline about-edu-btn">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9.5 15.5h5M9.5 12h5"/></svg>
-          Программы обучения
+          Программа обучения
+        </a>
+        <a href="Biografia.html" class="btn btn-outline about-edu-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9.5 15.5h5M9.5 12h5"/></svg>
+          Обо мне
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== УСЛУГИ ==================== -->
+<!--УСЛУГИ-->
 <section class="section section-alt" id="services">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">Услуги</div>
-      <h2 class="section-title">Чем я могу помочь</h2>
-      <p class="section-sub">Подбираю формат занятий индивидуально — от персональной работы один на один до групповых занятий с другими учениками.</p>
     </div>
     <div class="services-grid">
 
@@ -1144,23 +1149,16 @@ footer{
         <div class="price-list">
           <div class="price-item">
             <div>
-              <span class="price-name">Индивидуальное занятие</span>
-              <span class="price-note">Полное внимание, программа подстроена под ученика</span>
-            </div>
-            <span class="price-value">9000 ₽</span>
-          </div>
-          <div class="price-item">
-            <div>
               <span class="price-name">
-                Групповое занятие
+                Курс подготовки
                 <span class="badge-profit">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
                   Выгодно
                 </span>
               </span>
-              <span class="price-note">Небольшая группа, живое обсуждение задач</span>
+              <span class="price-note">Полная программа занятий и сопровождение</span>
             </div>
-            <span class="price-value">5000 ₽</span>
+            <span class="price-value">5000 ₽ / мес</span>
           </div>
         </div>
       </div>
@@ -1298,7 +1296,7 @@ footer{
   </div>
 </section>-->
 
-<!-- ==================== ОТЗЫВЫ ==================== -->
+<!--ОТЗЫВЫ-->
 <section class="section section-alt" id="reviews">
   <div class="container">
     <div class="fade-in">
@@ -1355,7 +1353,7 @@ footer{
   </div>
 </section>
 
-<!-- ==================== КОНТАКТЫ ==================== -->
+<!--КОНТАКТЫ-->
 <section class="section" id="contacts">
   <div class="container contacts-inner">
 
@@ -1407,7 +1405,7 @@ footer{
       </div>
     </div>
 
-    <!-- ---------- ФОРМА ОБРАТНОЙ СВЯЗИ ---------- -->
+    <!--ФОРМА ОБРАТНОЙ СВЯЗИ-->
     <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/meajonoz" method="POST" novalidate>
       <div class="form-group" id="nameGroup">
         <label for="nameInput">Имя</label>
@@ -1435,7 +1433,7 @@ footer{
   </div>
 </section>
 
-<!-- ==================== ПОДВАЛ ==================== -->
+<!--ПОДВАЛ-->
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -1612,7 +1610,7 @@ form.addEventListener('submit', async function(e){
 
   // Проверка телефона/e-mail (простая проверка на непустое поле + базовый формат)
   const phonePattern = /^[+\d][\d\s()-]{5,}$/;
-  const emailPattern  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailPattern  = /^[^\s@]+@ [^\s@]+\ .[^\s@]+$/;
   if(!contact || !(phonePattern.test(contact) || emailPattern.test(contact))){
     setError('contactGroup', true);
     valid = false;
