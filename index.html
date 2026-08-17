@@ -767,6 +767,14 @@ header{
 .review-name{ font-size:14px; font-weight:500; }
 .review-role{ font-size:12.5px; color:var(--color-text-light); }
 
+.reviews-cta{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:44px;
+}
+
 /* ==========================================================================
    КОНТАКТЫ
    ========================================================================== */
@@ -1203,7 +1211,7 @@ footer{
       <div class="price-card-compare">
         
         <span class="price-old">1000* ₽</span>
-        <span class="price-new">625 ₽</span>
+        <span class="price-new">625* ₽</span>
       </div>
       <span>*цена указана за 1 индивидуальное занятие</span>
     </div>
@@ -1394,6 +1402,11 @@ footer{
         </div>
       </div>
 
+    </div>
+
+    <div class="reviews-cta fade-in">
+      <a href="https://max.ru/join/5VecMNTnW_HRS7eIOnW8i_t8-oGnq-Y61aI6RgYMflo" target="_blank" rel="noopener" class="btn">Посмотреть и оставить отзыв</a>
+      
     </div>
   </div>
 </section>
@@ -1655,7 +1668,7 @@ form.addEventListener('submit', async function(e){
 
   // Проверка телефона/e-mail (простая проверка на непустое поле + базовый формат)
   const phonePattern = /^[+\d][\d\s()-]{5,}$/;
-  const emailPattern  = /^[^\s@]+@ [^\s@]+\ .[^\s@]+$/;
+  const emailPattern  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!contact || !(phonePattern.test(contact) || emailPattern.test(contact))){
     setError('contactGroup', true);
     valid = false;
