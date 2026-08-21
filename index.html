@@ -627,104 +627,6 @@ header{
 .badge-profit svg{ width:11px; height:11px; }
 
 /* ==========================================================================
-   ПОРТФОЛИО
-   ========================================================================== */
-.portfolio-slider{
-  position:relative;
-}
-.portfolio-track{
-  display:flex;
-  gap:24px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  padding:4px 4px 18px;
-  margin:0 -4px;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-.portfolio-track::-webkit-scrollbar{ display:none; }
-.portfolio-item{
-  flex:0 0 calc(25% - 18px);
-  scroll-snap-align:start;
-  border-radius:var(--radius);
-  overflow:hidden;
-  background:var(--color-bg-grey);
-  border:1px solid var(--color-border);
-  transition:transform var(--transition), box-shadow var(--transition);
-}
-.portfolio-item:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.08);
-}
-.portfolio-img-wrap{
-  width:100%;
-  aspect-ratio:1/1;
-  background:linear-gradient(135deg, #B7C68C, #A7B87C);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-.portfolio-img-wrap img{
-  width:100%; height:100%;
-  object-fit:cover;
-}
-.slider-arrow{
-  position:absolute;
-  top:38%;
-  transform:translateY(-50%);
-  width:48px; height:48px;
-  border-radius:50%;
-  background:#fff;
-  border:1px solid var(--color-border);
-  box-shadow:0 10px 26px rgba(0,0,0,0.10);
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer;
-  z-index:5;
-  transition:background var(--transition), transform var(--transition);
-}
-.slider-arrow:hover{ background:var(--color-accent); }
-.slider-arrow:hover svg{ stroke:#fff; }
-.slider-arrow svg{ width:20px; height:20px; stroke:var(--color-text); transition:stroke var(--transition); }
-.slider-arrow.prev{ left:-24px; }
-.slider-arrow.next{ right:-24px; }
-.portfolio-dots{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin-top:14px;
-}
-.portfolio-dot{
-  width:8px; height:8px;
-  border-radius:50%;
-  background:var(--color-border);
-  border:none;
-  padding:0;
-  cursor:pointer;
-  transition:background var(--transition), transform var(--transition);
-}
-.portfolio-dot.active{
-  background:var(--color-accent);
-  transform:scale(1.3);
-}
-.portfolio-icon{
-  width:38px; height:38px;
-  opacity:0.3;
-}
-.portfolio-caption{
-  padding:18px 20px 22px;
-}
-.portfolio-caption h4{
-  font-size:15.5px;
-  margin-bottom:4px;
-}
-.portfolio-caption p{
-  font-size:13px;
-  color:var(--color-text-light);
-}
-
-/* ==========================================================================
    ОТЗЫВЫ
    ========================================================================== */
 .reviews-grid{
@@ -942,7 +844,6 @@ footer{
   .about-text{ order:1; }
   .about-buttons{ order:3; grid-column:1; justify-content:center; }
   .services-grid{ grid-template-columns:1fr; }
-  .portfolio-item{ flex-basis:calc(33.333% - 16px); }
   .reviews-grid{ grid-template-columns:repeat(2, 1fr); }
   .contacts-inner{ gap:50px; }
 }
@@ -970,8 +871,6 @@ footer{
   .nav-menu.open{ transform:translateX(0); }
   .nav-menu a{ font-size:19px; }
   .burger{ display:flex; }
-  .portfolio-item{ flex-basis:calc(50% - 12px); }
-  .slider-arrow{ display:none; }
   .reviews-grid{ grid-template-columns:1fr; }
   .footer-inner{ flex-direction:column; align-items:flex-start; text-align:left; }
   .hero{ padding-top:96px; }
@@ -1021,17 +920,20 @@ footer{
 }
 .overlay.show{ opacity:1; visibility:visible; }
 .Text-OGE{
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: clamp(32px, 4.6vw, 50px);
+  line-height: 1.22;
+  font-weight:700;
+  color:var(--color-text);
+  letter-spacing:-0.01em;
 }
 .Text-OGE em{
   display:block;
   font-style:normal;
-  font-size: 15px;
+  font-size: clamp(16px, 1.9vw, 19px);
   font-weight:400;
   color:var(--color-text-light);
-  margin-top:8px;
-  line-height:1.5;
+  margin-top:18px;
+  line-height:1.6;
 }
 </style>
 </head>
@@ -1046,7 +948,6 @@ footer{
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="nav-link">Главная</a></li>
         <li><a href="#services" class="nav-link">Стоимость</a></li>
-        <!-- <li><a href="#portfolio" class="nav-link">Портфолио</a></li> -->
         <li><a href="programmy.html" class="nav-link">Программы</a></li>
         <li><a href="#contacts" class="nav-link">Контакты</a></li>
       </ul>
@@ -1218,136 +1119,6 @@ footer{
     
   </div>
 </section>
-
-<!-- ==================== ПОРТФОЛИО ==================== 
-<section class="section" id="portfolio">
-  <div class="container">
-    <div class="fade-in">
-      <div class="section-label">Портфолио</div>
-      <h2 class="section-title">Избранные работы</h2>
-      <p class="section-sub">Пролистайте работы стрелками, точками или свайпом на телефоне.</p>
-    </div>
-
-    <div class="portfolio-slider">
-      <button class="slider-arrow prev" id="portfolioPrev" aria-label="Предыдущие работы">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="slider-arrow next" id="portfolioNext" aria-label="Следующие работы">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-
-      <div class="portfolio-track" id="portfolioTrack">
-
-       
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-1.jpg" alt="Оформление хайлайтс" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Оформление хайлайтс</h4>
-          <p>Оформление закреплённых элементов для соцсетей</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-2.jpg" alt="Печатная продукция" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Печатная продукция</h4>
-          <p>Макеты для визиток, брошюр и т.д.</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-3.jpg" alt="Разработка логотипа" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Разработка логотипа</h4>
-          <p>Логотип для фирмы или эксперта</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-4.jpg" alt="Линейные иллюстрации" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Линейные иллюстрации</h4>
-          <p>Индивидуальная отрисовка минималистичных картинок</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-5.jpg" alt="Инфопродукты" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Инфопродукты</h4>
-          <p>Оформление раздаточных материалов, композиция, дизайн</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-6.jpg" alt="Иллюстрации для учебных работ" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Иллюстрации для учебных работ</h4>
-          <p>Схемы, чертежи для дипломных и курсовых работ</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          
-          <img src="work-7.jpg" alt="Карточки для маркетплейсов" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Карточки для маркетплейсов</h4>
-          <p>Яндекс.Маркет, Ozon, Wildberries</p>
-        </div>
-      </div>
-
-      
-      <div class="portfolio-item fade-in">
-        <div class="portfolio-img-wrap">
-          <
-          <img src="work-8.jpg" alt="Оформление визуала профиля" style="display:none;" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.style.display='none'">
-          <svg class="portfolio-icon" viewBox="0 0 24 24" fill="none" stroke="#EBA050" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
-        <div class="portfolio-caption">
-          <h4>Визуал профиля</h4>
-          <p>Лента и упаковка профиля социальных сетей</p>
-        </div>
-      </div>
-
-      </div>
-
-      <div class="portfolio-dots" id="portfolioDots"></div>
-    </div>
-  </div>
-</section>-->
 
 <!--ОТЗЫВЫ-->
 <section class="section section-alt" id="reviews">
@@ -1576,56 +1347,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* ---------- СЛАЙДЕР ПОРТФОЛИО ---------- */
-const portfolioTrack = document.getElementById('portfolioTrack');
-const portfolioDots   = document.getElementById('portfolioDots');
-const portfolioPrev   = document.getElementById('portfolioPrev');
-const portfolioNext   = document.getElementById('portfolioNext');
-const portfolioItems  = portfolioTrack ? portfolioTrack.querySelectorAll('.portfolio-item') : [];
-
-if(portfolioTrack && portfolioItems.length){
-  portfolioItems.forEach((item, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'portfolio-dot';
-    dot.type = 'button';
-    dot.setAttribute('aria-label', 'Работа ' + (i + 1));
-    dot.addEventListener('click', () => {
-      portfolioTrack.scrollTo({ left: item.offsetLeft - portfolioTrack.offsetLeft, behavior: 'smooth' });
-    });
-    portfolioDots.appendChild(dot);
-  });
-
-  const dots = portfolioDots.querySelectorAll('.portfolio-dot');
-
-  function updatePortfolioDots(){
-    let closestIndex = 0;
-    let closestDist = Infinity;
-    portfolioItems.forEach((item, i) => {
-      const dist = Math.abs(item.offsetLeft - portfolioTrack.offsetLeft - portfolioTrack.scrollLeft);
-      if(dist < closestDist){ closestDist = dist; closestIndex = i; }
-    });
-    dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
-  }
-
-  let scrollTicking = false;
-  portfolioTrack.addEventListener('scroll', () => {
-    if(!scrollTicking){
-      window.requestAnimationFrame(() => { updatePortfolioDots(); scrollTicking = false; });
-      scrollTicking = true;
-    }
-  });
-
-  portfolioPrev.addEventListener('click', () => {
-    portfolioTrack.scrollBy({ left: -portfolioTrack.clientWidth * 0.85, behavior: 'smooth' });
-  });
-  portfolioNext.addEventListener('click', () => {
-    portfolioTrack.scrollBy({ left: portfolioTrack.clientWidth * 0.85, behavior: 'smooth' });
-  });
-
-  updatePortfolioDots();
-  window.addEventListener('resize', updatePortfolioDots);
-}
-
 /* ---------- КНОПКА "НАВЕРХ" ---------- */
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
@@ -1731,7 +1452,7 @@ form.addEventListener('submit', async function(e){
    чтобы всё оставалось в одном HTML-файле без отдельного .js */
 if('serviceWorker' in navigator){
   const swCode = `
-    const CACHE_NAME = 'julia-portfolio-v1';
+    const CACHE_NAME = 'julia-oge-v1';
     self.addEventListener('install', (event) => {
       self.skipWaiting();
       event.waitUntil(
